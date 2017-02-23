@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="personCtrl">
+    <p>The name is {{ lastName | uppercase }}</p>
+</div>
+<script>
+    angular.module('myApp', []).controller ('personCtrl', function($scope){
+        $scope.firstName = "John",
+            $scope.lastName = "Doe"
+    });
+</script>
+</body>
+</html>
+<!--
+<div ng-app="myApp" ng-controller="namesCtrl">
+<p> Looping with objects:</p>
+<ul> <li ng-repeat= "x in names | orderBy:'country'">
+{{ x.name + ', ' + x.country }}
+</li>
+</ul>
+</div>
+<script>
+angular.modules('myApp', []).controller('namesCtrl', function($scope) {
+$scope.names = [
+{name:'Jain', country:'Norway'},
+{name:'Carl', county:'Sweden'},
+{name:'Margareth',counry:'England'}
+];
+});
+</script>
+-->
+<!--
+div ng-app="myApp" ng-controller="costCtrl">
+<h1>Price: {{ price | currency }}</h1>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('costCtrl', function($scope) {
+$scope.price = 58;
+});
+</script>
+<p> The currency filter formats a number to a currency format.</p>
+-->
+<!--
+<div ng-app="myApp" ng-controller="namesCtrl">
+<ul>
+<li ng-repeat="x in names | filter : 'i'">
+{{ x }}
+</li>
+</ul>
+</div>
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+$scope.name = [
+'jain',
+'naresh',
+'main',
+'nani',
+'vani',
+'nari',
+];
+});
+</script>
+<p> This example displays only the names containig the letter "i".</p>
+-->
+

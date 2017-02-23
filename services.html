@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Services</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+</head>
+<body>
+<!--
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p> the url of this page is:</p>
+    <h3>{{myUrl}}</h3>
+</div>
+<p> This example uses the built-in $location service to get the absolute url of the page.</p>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $location){
+        $scope.myUrl= $location.absUrl();
+    });
+</script>
+-->
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>Today's welcome message is:</p>
+    <h1>{{mywelcome}}</h1>
+</div>
+<p>The $http service requests a page on the server, and the response is set as the value of the "myWelcom" variable.</p>\
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http){
+        $http.get("welcom.html").then(function (response){
+            $scope.myWelcom = response.data;
+        });
+    });
+</script>
+<P> This ezample demonstrates very sinple use of the http service. </P>
+</body>
+</html>

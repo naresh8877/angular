@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HttpAJAX</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <p>Today's welcome message is:</p>
+    <h1>{{mywelcome}}</h1>
+</div>
+<p>The $http service request a page on the server, and the response is user as the valid of the "myWelcome" variable.</p>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope, $http){
+        $http({
+            method: "GET",
+            url : "welcome.html"
+        }).then(function mySucess(response) {
+            $scope.myWelcome = response.data;
+        }, function myError(response) {
+            $scope.myWelcome = response.statusText;
+        });
+    });
+<!-- Properties
+    The response from the server is an object with these properties;
+    .config; the object used to generate the request.
+    .data: a string, or an object, carrying the reponse from the server
+    .headers: a function to use to get header information.
+    .status a number defining the HTTP status
+    .ststusText a string defining the HTTP status
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+    <p>Data : {{content}}
+    <p>Status : {{ststuscode}}
+    <p>StatusText : {{statustext}}
+
+    -->
+</script>
+</body>
+</html>

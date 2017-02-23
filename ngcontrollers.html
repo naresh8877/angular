@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ngcontrollers</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    First Name: <input type="text" ng-model="firstName"><br>
+    Last Name:  <input type="text" ng-model="lastName"><br>
+    <br>
+    Full Name: {{ firstName + " " + lastName}}
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+$scope.firstName = "naresh";
+$scope.lastName = "p";
+});
+</script>
+
+
+<p>   The Angularjs application is defined by ng-app="myApp". The application runs inside the <div>
+    The ng-controller="Myctrl" attribute is an AngularJS directive. It defines a controller
+    The myCtrl function is a javaScript function
+    AngularJS will invoke the controller with a $scope object
+    Angularjs $scope is the application object
+</p>
+</body>
+</html>
+<!--
+controller Methods
+controller can also have methods
+<div ng-app="myApp" ng-controller="personCtrl">
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{fullName()}}
+</div>
+<script>
+ var app = angular.module('myApp', []);
+ app.controller('personCtrL", function($scope){
+ $scope.firstName = "naresh";
+ $scope.lastName= "p";
+ $scope.fullName = function(){
+ return $scope.firstName + " " + $scope.lastName;
+ };
+ });
+-->

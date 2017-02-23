@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two way binding</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    Name: <input ng-model="name">
+    <h1> you entebred: {{name}}</h1>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope){
+        $scope.name = "John Doe";
+    });
+</script>
+<p> Change the name the input field and you will see the name in the header changes
+so in this ng-model directives provides two way data binding between the model and the view
+    Two way data binding in Angularjs is the synchronization between the model and the view
+    when data in the model changes the view reflects the change and when data in the view changes the model is updated as well.
+    This happens immediately and automatioally which make sure that the model and the view is updated at all times
+
+</p>
+</body>
+</html>

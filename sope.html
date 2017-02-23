@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+    <h1>{{carname}}</h1>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope){
+        $scope.carname = "Volvo";
+    });
+</script>
+<p> when adding properties to the $scope object in the controller the view(HTML) gets to these properties
+    In this the view you do  not use the prefix $scope you just refer to protertyname, like{{carname}}.
+</p>
+</body>
+</html>
+<!--
+<div ng-app="myApp" ng-controller="myCtrl">
+    <input ng-model="name">
+    <h1>My name is {{name}}</h1>
+</div>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope){
+        $scope.name = "naresh p"
+    });
+</script>
+The scope is a javascript object with properties and methods, which are available for both the view and the controller
+IN this if you make changes in the view the model and the controller will be updated;
+-->
+<!--   Know your scope
+ it is important to know which scope you  are  dealing wtih at any time.
+IN the two ecamples above there is only one scope, so knowing your scope is not an issue but for larger application there can be
+sections in the HTML DOM which can only access ceratain scope
+
+in This we are dealing with ng-repeat directive
+<div ng-app="myApp", ng-controller="myCtrl">
+<ul>
+<li ng-repeat="x in name">{{x}}<li>
+</ul>
+</div>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl' , function($scope) {
+$scope.names = ["Emil", "Tobias", "Linus"];
+}};
+</script>
+-->

@@ -1,0 +1,105 @@
+1) AngularJS is a javascript framework. It can be added to an HTML page with a <script> tage
+ Angularjs extends HTML attributes with Directives and binds data to HTML wtih EXPRESSION
+
+ AngularJS extends HTML with ng-directives
+
+ The ng-app directive defines an AngularJs application.
+ The ng-model directive binds the value of HTML controls(input, select, textarea) to application data
+ The ng-bind directive binds application data to the HTML view
+ The ng-init directive intializes AngularJS application variables
+
+ 2) Angularjs Expression ?
+ An) AngularJs Expression are written inside double braces: {{}}
+
+ 3)Anguarjs modules ?
+ An) Angularjs modules define Angularjs Application, AngularJS controllers control AngularJS application
+    ng-app directive define the application, the ng-controller directive define the controller
+     module is the container of the application controller
+     modules and controllers in files:- It is a common in AngularJS application to put the module and the controllers in js files
+     var app = angular.module("myApp", []);
+     ****imp( The [] parameter in the module definition can fe ised to define dependent modules.
+     without the [] parameter, you are not creating a new module, but retrieving an existing one)
+     Function can pollute the Global Namespace:- Global function should be avoided in js. They can easily be overwritten or destroyed by others
+     to reduces this problem by keeping all function local to the module
+
+  4) Angular Directives?
+   An) AngularJs lets you extend HTML with new Attributes called Directives.
+   angularJs has a set of Built-in directives which offers functionality to your application
+   AngularJs lets you define your own directives.
+   The ng-app directive initialized as AngularJS application
+   The ng-init directive initializes application data.
+   Create new Directives- In addition to all built-in angularJs directive you can create your own directives
+   New directive are created by using the .directive function.
+   To invoke the new directive, make ana HTML element with the same tag name as the new directive
+   while naming we must use the camel case name,w3TestDirective, and - for seperate name
+
+   5) Angular database is perfect for database CRUD application
+   The ng-app directive define the root element of an angualarJS application
+   The ng-app directive will auto-bootstrap the appication when a web page is loaded
+
+   6)Angularjs controllers?
+   An)Angularjs controller control the data of anguarjs application
+   angualrjs controller are regular javascript objects
+   Angularjs application are controlled by controllers.
+
+   7)In angularJs scope?
+   An) The scope is the binding part between the HTMl(view) and the Javascript(controller).
+   THe scope is an object with available properties and methods.
+   The scope is available for both the view and the controller
+   ***Understanding the scope
+   If we consider an AngualrJs application to consist of:
+   *)View which is the HTML
+   *)Model which is the data available for the current view
+   *)Controller which is the javaScript function that makes/chamges/removes/controls ths data
+
+    8)Filters Angualrjs
+    An) AngualrJs provides filters to transfer the data :
+    Currency Format a number to a currency  format.
+    data: Formate a data to a specified format.
+    filter: select a subset of items from an array
+     json: Format an object to a JSON stein.
+     linitTO: Limits an arrau/string,into a specified nimber od elements/character
+     Lowercase: Format a string to a lower case.
+     Number: Format a  number to a string
+     orderBy: Orders an array by an expression
+     uppercase Format a string to upper case
+     filter can be added in an expression by using the pipe character | , followed by filter
+
+     Filter an Array Based on user Input:-
+     By setting the ng-model directive on an input field we can use the value of the input field as an expression in a filter
+
+     9)Angularjs services ?
+     Ans) In angularjs you can make your own service or use one of the many built-in services
+     **AngularJS a service is a function or object that is available for and limited to your AngularJS application
+      Angualrjs is 30 buit-in services. One of them is the $location service
+      $location service has methods which return information about the location of current web page
+
+      10) why  we uses services in Angular?
+      An) For many services like the $location services it seem like you could use objects that are already in the DOM like the window.location
+      object, and you could, but it would have some limitation at least for your angualrJS application
+      AngularJs constantly supervises your application and for it to handel changes and events properly,Angularjs prefer that you use the $location servoce instead of the window.location
+      object.
+      $http services:- $http service is one of the most common used services in AngualrJs applications. The service makes a request
+       to the server, and lets your application handle the response
+       Use a Coustem service inside a Filter :- Once you have created a service and connected it to your applocation you can use the service
+       in any  controller,directices .filter,or even inside other sevices
+       AngularJS HTTP AJAX- $http ;- $http is an angularJs service for reading data from remote servers.
+       Methods:- The example above uses the .get method of the $http service.  The .get method is a shortcut method of the $http service.
+                  There are serveral shortcut methods:.delete().get().head().jsonp().patch().post().put()
+       11) to get json data?
+       An) The data you get from the response is expected to be in JSON format.
+       JSON is a great way of transporting data and it is easy to use within AngularJS or any other Javascript
+        12) Angualarjs selecte Boxes?
+        An) If you want to  create a dropdown list, based on an object or an array in Angularjs, you should use the ng-options directive.
+        ng-repeat  directive repeats a block of HTML code for each item in an array it can be used to create option in a dropdown list,
+        but the ng-option directive was made especially for filling a dropdown list with option and has at least one important advantange:
+        dropdown made with ng-option allllows the selesctes value to be an object, while dropdowns made form ng-repeat has to be a string
+        13) AngularJS validation?
+        An) AngularJS offer client-side form validation.
+        AngularJS monitor the state of the form and input fields(input,textarea) and lets you notify the user about the current state.
+        AngularJS also holds information about whether they have been touched or modified or not.
+        use HTML5 attribute required to specify that the input field must be filled
+        14)Angularjs Routing?
+        An)ngRoute module help your application to become a single Page application
+         if you want to navigate to different pages in your application but also want the application to be a SPA with no page reloading
+         you can use the ngRoute module
